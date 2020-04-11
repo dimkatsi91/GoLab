@@ -8,5 +8,5 @@ Period: Fevrier 2020 ~ ...
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-![GoLang](https://github.com/dimkatsi91/GoLab/images/golang.jpg)
+![GoLang](https://github.com/dimkatsi91/GoLab/blob/master/images/golang.jpg)
 
