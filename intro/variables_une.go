@@ -6,15 +6,14 @@ import (
 
 type Number struct {
 	integer int
-	double float64
+	double  float64
 }
 
-func (num * Number) getNums() (int, float64) {
+func (num *Number) getNums() (int, float64) {
 	return num.integer, num.double
 }
 
-
-func print_num(num * Number, choice int) {
+func print_num(num *Number, choice int) {
 
 	integer, double := num.getNums()
 
@@ -29,13 +28,13 @@ func print_num(num * Number, choice int) {
 }
 
 func main() {
-	
-	Object := Number {
-		integer : 10,
-		double : 3.141593,
+
+	Object := Number{
+		integer: 10,
+		double:  3.141593,
 	}
 
-	for i:=0; i<4; i++ {
+	for i := 0; i < 4; i++ {
 		print_num(&Object, i)
 	}
 

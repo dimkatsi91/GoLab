@@ -19,25 +19,24 @@ type Truck struct {
 	fouWheel bool
 }
 
-
 func main() {
 	// a truck
-	truck := Truck {
-		Vehicle: Vehicle {
-			doors : 2,
-			color : "red", 
+	truck := Truck{
+		Vehicle: Vehicle{
+			doors: 2,
+			color: "red",
 		},
-		fouWheel : false,
+		fouWheel: false,
 	}
 	fmt.Println(truck)
 
 	// a sedan
-	sedan := Sedan {
-		Vehicle: Vehicle {
-			doors : 4,
-			color : "beige",
+	sedan := Sedan{
+		Vehicle: Vehicle{
+			doors: 4,
+			color: "beige",
 		},
-		luxury : true,
+		luxury: true,
 	}
 	fmt.Println(sedan)
 }

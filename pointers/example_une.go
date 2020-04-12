@@ -8,14 +8,14 @@ type alien struct {
 	species string
 }
 
-func (a * alien) info() {
+func (a *alien) info() {
 	fmt.Println("Alien of Species: " + a.species)
 }
 
 func main() {
 	fmt.Println("******************************************")
-	narcalien := alien {
-		species : "Narco Alien",
+	narcalien := alien{
+		species: "Narco Alien",
 	}
 	narcalien.info()
 	fmt.Println("******************************************")

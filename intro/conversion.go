@@ -22,7 +22,7 @@ func main() {
 	fmt.Printf("Pi is of type [ %T ] and has value: %f\n", pi, pi)
 	// print out some info regarding myPI variable
 	//
-	fmt.Printf("myPI is of type [ %T ] and has value: %f\n",myPI, myPI)
+	fmt.Printf("myPI is of type [ %T ] and has value: %f\n", myPI, myPI)
 
 	// Convert myPI to type float64 and add two pi's
 	//

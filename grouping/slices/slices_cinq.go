@@ -1,17 +1,15 @@
 package main
 
-
 import (
 	"fmt"
 	"strings"
 )
 
-
 // This function accepts a slice of strings as input
 // and returns a slice of strings of the same length as output
 //
 func capit(names []string) []string {
-	// Fetch the length of the 'names' slice using 
+	// Fetch the length of the 'names' slice using
 	// the built-in Go's func len()
 	// Btw cap() returns the capacity of a slice in GoLang
 	//
@@ -30,14 +28,13 @@ func capit(names []string) []string {
 			capd_slice[index] = strings.ToUpper(name)
 		}
 	}
-	// return the new slice with the capitalized names 
+	// return the new slice with the capitalized names
 	return capd_slice
 }
 
-
 func main() {
 	fmt.Println("#########################################")
-	// A slice is the top layer abstract structure - the underlying 
+	// A slice is the top layer abstract structure - the underlying
 	// structure of a slice is an array
 	// Create a slice of length=6 and capacity=10
 	// Length is the size of the slice | Capacity is the size of the underlying array
@@ -46,7 +43,7 @@ func main() {
 	names[0] = "Dim"
 	names[5] = "Kacim"
 	// Print-out the values only - no need to print out the indices
-	// 
+	//
 	for _, text := range names {
 		if text == "" {
 			fmt.Println("No value ... Skipping ...")

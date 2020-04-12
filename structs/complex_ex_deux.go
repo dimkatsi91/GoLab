@@ -23,9 +23,9 @@ func (cplx *Complex) print() {
 // Factory
 //
 func NewComplex(re int, img int) Complex {
-	return Complex { 
-		real : re,
-		imag : img,
+	return Complex{
+		real: re,
+		imag: img,
 	}
 }
 
@@ -39,9 +39,9 @@ func (complex_premier *Complex) add(complex_deuxieme *Complex) {
 // same as above member function of struct Complex
 //
 func (complex *Complex) add_new(rhs *Complex) *Complex {
-	cplx := &Complex {
-		real : complex.real + rhs.real,
-		imag : complex.imag + rhs.imag,
+	cplx := &Complex{
+		real: complex.real + rhs.real,
+		imag: complex.imag + rhs.imag,
 	}
 	return cplx
 }
@@ -49,20 +49,19 @@ func (complex *Complex) add_new(rhs *Complex) *Complex {
 func main() {
 	// Create a complex number and a second and add the second one to the first one
 	//
-	c1 := NewComplex(3, 4)							// Y1 = 3 + 4*j
-	c2 := NewComplex(7, 6)							// Y2 = 7 + 6*j
+	c1 := NewComplex(3, 4) // Y1 = 3 + 4*j
+	c2 := NewComplex(7, 6) // Y2 = 7 + 6*j
 	// print them both before and after ...
 	//
 	c1.print()
 	c2.print()
 	// add the first to the second
 	//
-	c2.add(&c1)		// c2 is now Y2 = 10 + 10*j
+	c2.add(&c1) // c2 is now Y2 = 10 + 10*j
 	c2.print()
 
 	// Test the add_new member function of Complex struct
 	//
 	c3 := c1.add_new(&c2)
-	c3.print() 								// Y1 = (3 + 10) + (4 + 10)*j = 13 + 14*j
+	c3.print() // Y1 = (3 + 10) + (4 + 10)*j = 13 + 14*j
 }
-

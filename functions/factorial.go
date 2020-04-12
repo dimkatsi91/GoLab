@@ -11,9 +11,8 @@ func fact(num int) int {
 	return fact(num-1) * num
 }
 
-
 func main() {
-	for num:=0; num<21; num++ {
+	for num := 0; num < 21; num++ {
 		fmt.Println("Factorial[", num, "] = ", fact(num))
 	}
 }

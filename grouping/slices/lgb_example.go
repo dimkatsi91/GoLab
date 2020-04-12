@@ -3,10 +3,9 @@
  *	Efficient way to remove a value from an unsorted slice
  */
 
- package main
+package main
 
- import "fmt"
-
+import "fmt"
 
 func removeAtIndex(src []int, idx int) []int {
 	lastIndex := len(src) - 1
@@ -16,9 +15,8 @@ func removeAtIndex(src []int, idx int) []int {
 	return src[:lastIndex]
 }
 
- func main() {
-	 scores := []int{1,2,3,4,5}						// [1 2 3 5 4]
-	 scores = removeAtIndex(scores, 2)			   //  remove '3'
-	 fmt.Println(scores)						  //   [1 2 5 4]
- }
- 
+func main() {
+	scores := []int{1, 2, 3, 4, 5}    // [1 2 3 5 4]
+	scores = removeAtIndex(scores, 2) //  remove '3'
+	fmt.Println(scores)               //   [1 2 5 4]
+}

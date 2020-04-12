@@ -4,7 +4,6 @@
 */
 package main
 
-
 import (
 	"fmt"
 )
@@ -15,15 +14,15 @@ type DeskEnv string
 
 const (
 	Cinnamon DeskEnv = "Cinnamon"
-	Kde DeskEnv = "KDE"
-	Xfce DeskEnv = "XFCE"
-	Mate DeskEnv = "MATE"
-	Other DeskEnv = "NO DESKTOP"
+	Kde      DeskEnv = "KDE"
+	Xfce     DeskEnv = "XFCE"
+	Mate     DeskEnv = "MATE"
+	Other    DeskEnv = "NO DESKTOP"
 )
 
 type Mint struct {
 	// Desktop Environment : Cinnamon | KDE | XFCE | MATE
-	desktop DeskEnv
+	desktop                                   DeskEnv
 	os_version, shell_version, kernel_version string
 }
 
@@ -37,10 +36,10 @@ func main() {
 	// new keyword usage in GoLang
 	//
 	mint19_3 := new(Mint)
-	
+
 	mint19_3.desktop = Cinnamon
 	mint19_3.os_version = "19.3"
 	mint19_3.shell_version = "3.28.3"
-	mint19_3.kernel_version = "4.16" 
+	mint19_3.kernel_version = "4.16"
 	mint19_3.echo()
 }

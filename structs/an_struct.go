@@ -6,8 +6,8 @@ import (
 
 type Person struct {
 	first string
-	last string
-	age int
+	last  string
+	age   int
 }
 
 func (p *Person) echo() string {
@@ -18,11 +18,11 @@ func main() {
 	// a person
 	//
 	fmt.Println("***************************************************************")
-	diman := Person {
-		first : "Dimos",
-		last : "Katsimardos",
-		age : 28,
-	} 
+	diman := Person{
+		first: "Dimos",
+		last:  "Katsimardos",
+		age:   28,
+	}
 	var diman_info = diman.echo()
 	fmt.Println(diman_info)
 
@@ -31,12 +31,12 @@ func main() {
 	fmt.Println("***************************************************************")
 	p2 := struct {
 		first string
-		last string
-		age int
-	} {
-		first : "Namid",
-		last : "Khan",
-		age : 33,
+		last  string
+		age   int
+	}{
+		first: "Namid",
+		last:  "Khan",
+		age:   33,
 	}
 	fmt.Println(p2.first, p2.last, p2.age)
 
@@ -46,12 +46,12 @@ func main() {
 	pol := struct {
 		Person
 		isViolent bool
-	} { Person : Person {
-			first : "James",
-			last : "Doe",
-			age : 44,
-		},
-		isViolent : true,
+	}{Person: Person{
+		first: "James",
+		last:  "Doe",
+		age:   44,
+	},
+		isViolent: true,
 	}
 	fmt.Println(pol.first, pol.last, pol.age)
 	if pol.isViolent == true {

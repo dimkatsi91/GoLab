@@ -5,7 +5,6 @@ import (
 	"runtime"
 )
 
-
 func check_OS() {
 	fmt.Println("This machine runs ...")
 	switch os := runtime.GOOS; os {
@@ -21,5 +20,5 @@ func check_OS() {
 func main() {
 
 	check_OS()
-	
+
 }

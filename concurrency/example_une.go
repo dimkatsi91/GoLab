@@ -5,7 +5,6 @@ import (
 	"runtime"
 )
 
-
 func info() {
 	fmt.Println("*****************************************")
 	fmt.Println("Architecture:\t", runtime.GOARCH)
@@ -16,24 +15,23 @@ func info() {
 }
 
 func calcFact(num int) int {
-	if(num==0 || num==1) {
-		return 1;
+	if num == 0 || num == 1 {
+		return 1
 	}
 	f := 1
-	for i:=1; i<=num; i++ {
+	for i := 1; i <= num; i++ {
 		f *= i
 	}
-	return f;
+	return f
 }
 
 func fact(num int) {
 	fmt.Println("Fact{", num, "} = ", calcFact(num))
 }
 
-
 func main() {
 	info()
-	for i:=5; i<7; i++ {
+	for i := 5; i < 7; i++ {
 		go fact(i)
 		info()
 	}

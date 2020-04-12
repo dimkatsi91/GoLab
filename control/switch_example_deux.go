@@ -3,15 +3,15 @@ package main
 import "fmt"
 
 func evenOrNot(number int) bool {
-	if res := number%2; res == 0 {
+	if res := number % 2; res == 0 {
 		return true
 	}
 	return false
 }
 
 func main() {
-	for num := 1; num <11; num++ {
-		//var condition bool = evenOrNot(num) 
+	for num := 1; num < 11; num++ {
+		//var condition bool = evenOrNot(num)
 		//switch condition {
 		switch evenOrNot(num) {
 		case true:

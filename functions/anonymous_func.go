@@ -18,6 +18,6 @@ func main() {
 	new_sum := func(a, b int) int {
 		fmt.Printf("Adding %d + %d from anonymous function ... ", a, b)
 		return a + b
-	} (75, 25)
+	}(75, 25)
 	fmt.Printf(" is --> %d\n", new_sum)
 }

@@ -7,14 +7,13 @@ import (
 
 var wait sync.WaitGroup
 
-
 type Human interface {
 	speak()
-} 
+}
 
 type Person struct {
 	first, last string
-	age int
+	age         int
 }
 
 func (p *Person) speak() {
@@ -26,21 +25,20 @@ func saySomething(human Human) {
 	wait.Done()
 }
 
-
 ///////////
 // main //
 /////////
 func main() {
 
-	diman := Person {
+	diman := Person{
 		first: "Diman",
-		last: "Kaci",
-		age: 28,
+		last:  "Kaci",
+		age:   28,
 	}
-	sumi := Person {
+	sumi := Person{
 		first: "Michael",
-		last: "Schumacher",
-		age: 34,
+		last:  "Schumacher",
+		age:   34,
 	}
 	wait.Add(2)
 	go saySomething(&diman)

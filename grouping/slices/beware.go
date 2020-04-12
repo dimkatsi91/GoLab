@@ -1,12 +1,10 @@
 package main
 
-
 import "fmt"
-
 
 func print(slice []string) {
 	fmt.Println("#################################")
-	for _, player := range(slice) {
+	for _, player := range slice {
 		fmt.Println(player)
 	}
 	fmt.Println("#################################")
@@ -27,20 +25,20 @@ func main() {
 
 /* Sample Output ::
 
-	#################################
-	Rivaldo
-	Giovanni
-	Ze Elias
-	Luciano
-	Alvez
-	#################################
+#################################
+Rivaldo
+Giovanni
+Ze Elias
+Luciano
+Alvez
+#################################
 
-	#################################
-	Rivaldo
-	Giovanni
-	Karembue -- Ooops -- Cahnged ???
-	Luciano
-	Alvez
-	#################################
+#################################
+Rivaldo
+Giovanni
+Karembue -- Ooops -- Cahnged ???
+Luciano
+Alvez
+#################################
 
 */

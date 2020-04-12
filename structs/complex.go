@@ -5,7 +5,6 @@ import (
 	"math"
 )
 
-
 // define complex number struct
 type Complex struct {
 	real int
@@ -25,9 +24,9 @@ func (cplx *Complex) print() {
 // Factory
 //
 func NewComplex(re int, img int) Complex {
-	return Complex { 
-		real : re,
-		imag : img,
+	return Complex{
+		real: re,
+		imag: img,
 	}
 }
 
@@ -37,7 +36,7 @@ func (cplx *Complex) norm() float64 {
 	// explicit conversions ... between types ...
 	var x float64 = float64(cplx.real)
 	var y float64 = float64(cplx.imag)
-	var z = math.Sqrt( x*x + y*y )
+	var z = math.Sqrt(x*x + y*y)
 	//fmt.Printf("|%d + %d*j| = %f \n", cplx.real, cplx.imag, z)
 
 	return z
@@ -46,9 +45,9 @@ func (cplx *Complex) norm() float64 {
 // Complex conjugate
 //
 func conj(cplx *Complex) Complex {
-	return Complex {
-		real : cplx.real,
-		imag : -cplx.imag,
+	return Complex{
+		real: cplx.real,
+		imag: -cplx.imag,
 	}
 }
 
@@ -60,7 +59,7 @@ func main() {
 	fmt.Printf("|%d + %d*j| = %f \n", cplx_i.real, cplx_i.imag, cplx_i_norm)
 
 	// 2nd ::
-	cplx_ii := NewComplex(10, 20);
+	cplx_ii := NewComplex(10, 20)
 	cplx_ii.print()
 
 	// Just conjugate the 2nd complex via a func(*obj) ::
@@ -74,9 +73,9 @@ func main() {
 	cplx_iv.print()
 
 	// 4th way ::
-	cplx_v := &Complex {
-		real : 300,
-		imag : 400,
+	cplx_v := &Complex{
+		real: 300,
+		imag: 400,
 	}
 	cplx_v.print()
 	var cplx_v_norm float64 = cplx_v.norm()

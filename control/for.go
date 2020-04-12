@@ -5,14 +5,14 @@ import (
 )
 
 func isEven(number int) bool {
-	if number % 2 == 0 {
+	if number%2 == 0 {
 		return true
 	}
 	return false
 }
 
 func main() {
-	for i:=0; i<10; i++ {
+	for i := 0; i < 10; i++ {
 		if isEven(i) == true {
 			fmt.Printf("Number : %d is even\n", i)
 		} else {
@@ -20,4 +20,3 @@ func main() {
 		}
 	}
 }
-

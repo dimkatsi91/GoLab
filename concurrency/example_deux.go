@@ -18,14 +18,14 @@ func info() {
 }
 
 func calcFact(num int) int {
-	if(num==0 || num==1) {
-		return 1;
+	if num == 0 || num == 1 {
+		return 1
 	}
 	f := 1
-	for i:=1; i<=num; i++ {
+	for i := 1; i <= num; i++ {
 		f *= i
 	}
-	return f;
+	return f
 }
 
 func fact(num int) {
@@ -33,10 +33,9 @@ func fact(num int) {
 	wait.Done()
 }
 
-
 func main() {
 	info()
-	for i:=5; i<7; i++ {
+	for i := 5; i < 7; i++ {
 		wait.Add(1)
 		go fact(i)
 		wait.Wait()

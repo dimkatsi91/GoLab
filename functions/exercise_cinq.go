@@ -18,13 +18,13 @@ type circle struct {
 	radius float64
 }
 
-func (c * circle) area() float64 {
+func (c *circle) area() float64 {
 	// area = pi*r^2
-	return c.radius*c.radius*PI
+	return c.radius * c.radius * PI
 }
 
-func (s * square) area() float64 {
-	return s.side*s.side
+func (s *square) area() float64 {
+	return s.side * s.side
 }
 
 func info(s shape) {

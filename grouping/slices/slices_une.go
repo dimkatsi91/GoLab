@@ -4,12 +4,11 @@ import (
 	"fmt"
 )
 
-
 func main() {
 	// a slice of values
 	//
 	fmt.Println("********************************************************")
-	slice_une := []int{1,2,3,4,5,6,7,8,9,10}
+	slice_une := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	fmt.Println(slice_une)
 
 	// for loop in slices
@@ -20,7 +19,7 @@ func main() {
 		slice_deux[index] = value * 2
 	}
 
-	for _, val := range(slice_deux) {
+	for _, val := range slice_deux {
 		fmt.Println(val)
 	}
 
