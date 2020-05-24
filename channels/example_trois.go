@@ -33,8 +33,10 @@ func factsChannel(N int) <-chan []int {
 // pulls values from it and prints them out
 //
 func print(c <- chan []int) {
-	for fact := range c {
-		fmt.Println(fact)
+	for facts := range c {
+		for _, v := range facts {
+			fmt.Println(v)
+		}
 	}
 }
 
