@@ -33,9 +33,11 @@ func factsChannel(N int) <-chan []int {
 // pulls values from it and prints them out
 //
 func print(c <- chan []int) {
+	var num int = 2
 	for facts := range c {
 		for _, v := range facts {
-			fmt.Println(v)
+			fmt.Printf("%d! = %d\n", num, v)
+			num++
 		}
 	}
 }
@@ -47,5 +49,13 @@ func main() {
 }
 
 /* OUTPUT ::
-				[2 6 24 120 720 5040 40320 362880 3628800]
+	2! = 2
+	3! = 6
+	4! = 24
+	5! = 120
+	6! = 720
+	7! = 5040
+	8! = 40320
+	9! = 362880
+	10! = 3628800
 */
