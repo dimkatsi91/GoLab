@@ -4,7 +4,7 @@ Title: Go Language Training Examples Material
 
 Author: Dimos Katsimardos
 
-Period: Fevrier 2020 ~ ...
+Period: Fevrier ~ Mai 2020
 
 -------------------------------------------------------------------------------------------------------------------------------
 
