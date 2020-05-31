@@ -15,13 +15,25 @@ func main() {
 
 	// fmt.Println(db)
 	fmt.Println("-----------------------------------")
-	for _, entry := range db {
-		for _, town := range entry {
-			fmt.Printf("%s | ", town)
+	for _, row := range db {
+		for _, row_entry := range row {
+			fmt.Printf("%s | ", row_entry)
 		}
 		fmt.Println(" ... ")
 	}
 	fmt.Println("-----------------------------------")
-	fmt.Println("Len before : ", len(db))
-	fmt.Println("Capacity before : ", cap(db))
+	fmt.Println("Len after : ", len(db))
+	fmt.Println("Capacity after : ", cap(db))
 }
+
+/* SAMPLE OUTPUT : 
+	Len before :  0
+	Capacity before :  0
+	-----------------------------------
+	Paris | France | Europe |  ... 
+	Berlin | Germany | Europe |  ... 
+	Chicago | America | USA |  ... 
+	-----------------------------------
+	Len after :  3
+	Capacity after :  4
+*/
