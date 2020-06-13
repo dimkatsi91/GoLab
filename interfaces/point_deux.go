@@ -32,7 +32,7 @@ type Rectangle struct {
 	side int
 }
 
-// Circle implements Point
+// Rectangle implements Point
 //
 func (r Rectangle) area() float64 {
 	return float64(r.side * r.side)
