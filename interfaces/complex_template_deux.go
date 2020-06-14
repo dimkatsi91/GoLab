@@ -40,8 +40,10 @@ func info(c Complex) (string, error) {
 func main() {
 	c1 := NewComplex(3,4)
 	c2 := NewComplex(3.3, 4.4)
+	c3 := Complex{"dimos", "kaci"}
+	c4 := Complex{c1, c2}
 	
-	c_nums := []Complex{c1, c2}
+	c_nums := []Complex{c1, c2, c3, c4}
 	// Both c_info and error need to be initialized
 	//
 	err := errors.New("Initialized error")
@@ -56,3 +58,12 @@ func main() {
 		}
 	}
 }
+
+/* Output Sample ::
+
+Error ::  Only float64 accepted ...
+Y = 3.3 + 4.4*j
+Error ::  Only float64 accepted ...
+Error ::  Only float64 accepted ...
+
+*/
