@@ -3,23 +3,28 @@ package main
 import (
 	"database/sql"
 	"fmt"
+
 	_ "github.com/lib/pq"
 )
 
 const (
 	hostname = "localhost"
-	port = 5432
-	user = "postgres"
+	port     = 5432
+	user     = "postgres"
 	// passwd = "password"
 	// dbName = "postgres"
 )
 
+const (
+	queryEmployees      = "SELECT * from employees"
+	queryInsertEmployee = "INSERT INTO EMPLOYEES(name, age, salary) values ($1, $2, $3)"
+)
 
 func main() {
 	// Ask user for password & DB name to use in order to open postgresql connection
 	//
 	var passwd, dbName string
-	
+
 	fmt.Println("Please enter postgresql password: ")
 	fmt.Scanln(&passwd)
 
@@ -29,34 +34,26 @@ func main() {
 	// Attempt to open the connection
 	//
 	psql_string := fmt.Sprintf(
-		"host=%s port=%d user=%s " + "password=%s dbname=%s sslmode=disable",
+		"host=%s port=%d user=%s "+"password=%s dbname=%s sslmode=disable",
 		hostname, port, user, passwd, dbName)
 	postgres_db, err := sql.Open("postgres", psql_string)
 
-	if err != nil {
-		panic(err)
-	}
+	error_sanity(err)
 	defer postgres_db.Close()
 
 	err = postgres_db.Ping()
 
-	if err != nil {
-		panic(err)
-	}
+	error_sanity(err)
 
 	fmt.Println("Connection to Postgresql DB successfully opened ...")
 
-	
-
 	// No, I want to insert two new records in this intratel DB inside this employees Table
 	//
-	insertStatement := `insert into employees("name", "age", "salary") values ('Andres', 44, 3500.00), ('Lionel', 36, 4500.00)`
-	_, err = postgres_db.Exec(insertStatement)
+	_, err = postgres_db.Exec(queryInsertEmployee, "Andres", 44, 3500.00)
 
-	if err != nil {
-		panic(err)
-	}
+	error_sanity(err)
 
+	_, err = postgres_db.Exec(queryInsertEmployee, "Lionel", 36, 4500.00)
 
 	// Now, I have a DB called intratel and a table called employees
 	// And I want to fetch the entries that I have inside this DB
@@ -65,9 +62,7 @@ func main() {
 
 	rows, err := postgres_db.Query(`SELECT * FROM "employees"`)
 
-	if err != nil {
-		panic(err)
-	}
+	error_sanity(err)
 
 	// Now, we have the rows, so lets loop until this iterator ends
 	// i.e. until the rows end ..
@@ -79,15 +74,16 @@ func main() {
 		var salary uint16
 
 		err = rows.Scan(&id, &name, &age, &salary)
-		if err != nil {
-			panic(err)
-		}
+		error_sanity(err)
 
 		// fmt.Println("ID NAME    AGE    SALARY")
 		fmt.Println(id, name, age, salary)
 	}
 
-	
 }
 
-
+func error_sanity(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
