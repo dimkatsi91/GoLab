@@ -55,6 +55,8 @@ func main() {
 
 	_, err = postgres_db.Exec(queryInsertEmployee, "Lionel", 36, 4500.00)
 
+	error_sanity(err)
+
 	// Now, I have a DB called intratel and a table called employees
 	// And I want to fetch the entries that I have inside this DB
 	// This tables has id, name, age, salary
