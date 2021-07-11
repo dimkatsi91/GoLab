@@ -3,22 +3,27 @@ package main
 import (
 	"database/sql"
 	"fmt"
+
 	_ "github.com/lib/pq"
 )
 
 const (
 	hostname = "localhost"
-	port = 5432
-	user = "postgres"
+	port     = 5432
+	user     = "postgres"
 	// passwd = "password"
 	// dbName = "postgres"
+)
+
+const (
+	queryEmployees = "SELECT * from employees"
 )
 
 func main() {
 	// Ask user for password & DB name to use in order to open postgresql connection
 	//
 	var passwd, dbName string
-	
+
 	fmt.Println("Please enter postgresql password: ")
 	fmt.Scanln(&passwd)
 
@@ -28,7 +33,7 @@ func main() {
 	// Attempt to open the connection
 	//
 	psql_string := fmt.Sprintf(
-		"host=%s port=%d user=%s " + "password=%s dbname=%s sslmode=disable",
+		"host=%s port=%d user=%s "+"password=%s dbname=%s sslmode=disable",
 		hostname, port, user, passwd, dbName)
 	postgres_db, err := sql.Open("postgres", psql_string)
 
@@ -50,7 +55,7 @@ func main() {
 	// This tables has id, name, age, salary
 	//
 
-	rows, err := postgres_db.Query(`SELECT * FROM "employees"`)
+	rows, err := postgres_db.Query(queryEmployees)
 
 	if err != nil {
 		panic(err)
